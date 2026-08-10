@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\SiteController;
 
 
-Route::get('/home',[SiteController::class, 'home'])->name('home');
+Route::get('/',[SiteController::class, 'home'])->name('home');
 Route::get('/page/{slug}',[SiteController::class, 'page'])->name('page.show');
 Route::get('/reviews',[SiteController::class, 'reviews'])->name('reviews.index');
 Route::get('/unity',[SiteController::class, 'unity'])->name('unity');
