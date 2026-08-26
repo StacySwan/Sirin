@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('author');
+            $table->string('name_author');
             $table->unsignedTinyInteger('rating')->nullable();
             $table->text('text')->nullable();
             $table->string('source_url')->nullable();
             $table->string('source')->nullable();
             $table->timestamp('published_at');
+            $table->boolean('is_published');
             $table->timestamps();
         });
     }

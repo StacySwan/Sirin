@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LeadController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\SiteController;
 
@@ -14,8 +15,11 @@ Route::get('/blog/{slug}',[SiteController::class, 'blogShow'])->name('blog.show'
 
 Route::get('/products',[SiteController::class, 'products'])->name('products.index');
 Route::get('/products/{slug}',[SiteController::class, 'productsShow'])->name('products.show');
+Route::post('/lead', [LeadController::class, 'store'])->name('lead.store');
 
 Route::get('/services',[SiteController::class, 'services'])->name('services.index');
 Route::get('/services/{slug}',[SiteController::class, 'servicesShow'])->name('services.show');
 
 //Route::post('/lead',[SiteController::class, 'lead'])->name('lead');
+
+

@@ -22,7 +22,6 @@ trait HasSlug
     {
         static::saving(function ($model): void {
             $source = $model->slugSourceField();
-
             if (blank($model->slug) && filled($model->{$source})) {
                 $model->slug = static::makeSlug((string) $model->{$source});
             }

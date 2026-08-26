@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('block_posts', function (Blueprint $table) {
+        Schema::create('blog_posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
             $table->string('title');
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('block_posts');
+        Schema::dropIfExists('blog_posts');
     }
 };

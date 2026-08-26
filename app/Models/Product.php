@@ -13,7 +13,7 @@ class Product extends Model
 
     protected $table = 'products';
 
-    protected string $slugSource = 'name';
+    protected string $slugSource = 'title';
 
     protected $fillable = [
         'title',
