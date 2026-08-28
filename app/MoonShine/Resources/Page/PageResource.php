@@ -7,6 +7,7 @@ namespace App\MoonShine\Resources\Page;
 use App\Models\Page;
 use MoonShine\Contracts\Core\TypeCasts\DataWrapperContract;
 use MoonShine\Laravel\Resources\ModelResource;
+use MoonShine\TinyMce\Fields\TinyMce;
 use MoonShine\UI\Components\Layout\Box;
 use MoonShine\UI\Fields\ID;
 use MoonShine\UI\Fields\Switcher;
@@ -45,9 +46,9 @@ class PageResource extends ModelResource
                 Text::make('Ссылка (slug)', 'slug')
                     ->required()
                     ->hint('Например privacy — страница будет доступна по адресу /page/privacy'),
-                Textarea::make('Текст страницы', 'content')
-                    ->hint('Можно использовать HTML-теги')
-                    ->customAttributes(['rows' => 20]),
+                TinyMce::make('Текст страницы', 'content')
+                    ->locale('ru')
+                    ->hint('Можно форматировать текст, делать отступы и вставлять картинки'),
                 Text::make('Meta title', 'meta_title'),
                 Textarea::make('Meta description', 'meta_description'),
                 Switcher::make('Опубликована', 'is_published')->default(true),

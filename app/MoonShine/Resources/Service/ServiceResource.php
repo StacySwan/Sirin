@@ -31,7 +31,7 @@ class ServiceResource extends ModelResource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Название', 'name'),
+            Text::make('Название', 'title'),
             Text::make('Ссылка', 'slug'),
             Number::make('Сортировка', 'sort')->sortable(),
             Switcher::make('Опубликована', 'is_published'),
@@ -43,7 +43,7 @@ class ServiceResource extends ModelResource
         return [
             Box::make('Основное', [
                 ID::make(),
-                Text::make('Название', 'name')->required(),
+                Text::make('Название', 'title')->required(),
                 Text::make('Ссылка (slug)', 'slug')
                     ->hint('Латиницей. Если оставить пустым — заполнится автоматически.'),
                 Textarea::make('Описание услуги', 'content')
@@ -56,7 +56,6 @@ class ServiceResource extends ModelResource
             ]),
 
             Box::make('SEO', [
-                Text::make('Meta title', 'meta_title'),
                 Textarea::make('Meta description', 'meta_description'),
                 Image::make('Картинка Open Graph', 'og_image')->dir('services')->removable(),
             ]),

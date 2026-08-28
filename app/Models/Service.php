@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     use HasSlug;
-    protected string $slugSource = 'name';
+    protected string $slugSource = 'title';
 
     protected $table = 'services';
 

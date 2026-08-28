@@ -23,3 +23,4 @@ Route::get('/services/{slug}',[SiteController::class, 'servicesShow'])->name('se
 //Route::post('/lead',[SiteController::class, 'lead'])->name('lead');
 
 
+
