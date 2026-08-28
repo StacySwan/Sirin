@@ -10,8 +10,8 @@
     <div class="grid">
         @forelse ($services as $service)
             <div class="card">
-                <h3><a href="{{ route('services.show', $service->slug) }}">{{ $service->name }}</a></h3>
-                <p class="muted">{{ Str::limit(strip_tags($service->content), 150) }}</p>
+                <h3><a href="{{ route('services.show', $service->slug) }}">{{ $service->title }}</a></h3>
+               {{-- <p class="muted">{{ Str::limit(strip_tags($service->content), 150) }}</p> --}}
                 <p><a class="button" href="{{ route('services.show', $service->slug) }}">Подробнее</a></p>
             </div>
         @empty

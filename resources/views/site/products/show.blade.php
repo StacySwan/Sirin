@@ -17,7 +17,7 @@
     @endif
 
     @if ($product->og_image)
-        <img class="photo" src="{{ asset('storage/' . $product->og_image) }}" alt="{{ $product->name }}">
+        <img class="photo" src="{{ asset('storage/' . $product->og_image) }}" alt="{{ $product->name }}" style="width: 600px; height: auto;">
     @endif
 
     @if ($product->price)

@@ -7,6 +7,7 @@ namespace App\MoonShine\Resources\Service;
 use App\Models\Service;
 use MoonShine\Contracts\Core\TypeCasts\DataWrapperContract;
 use MoonShine\Laravel\Resources\ModelResource;
+use MoonShine\TinyMce\Fields\TinyMce;
 use MoonShine\UI\Components\Layout\Box;
 use MoonShine\UI\Fields\ID;
 use MoonShine\UI\Fields\Image;
@@ -46,9 +47,9 @@ class ServiceResource extends ModelResource
                 Text::make('Название', 'title')->required(),
                 Text::make('Ссылка (slug)', 'slug')
                     ->hint('Латиницей. Если оставить пустым — заполнится автоматически.'),
-                Textarea::make('Описание услуги', 'content')
-                    ->hint('Можно использовать HTML-теги')
-                    ->customAttributes(['rows' => 15]),
+                TinyMce::make('Текст страницы', 'content')
+                    ->locale('ru')
+                    ->hint('Можно форматировать текст, делать отступы и вставлять картинки'),
                 Number::make('Сортировка', 'sort')
                     ->default(100)
                     ->hint('Чем меньше число, тем выше в списке'),

@@ -19,7 +19,7 @@
     </p>
 
     @if ($post->og_image)
-        <img class="photo" src="{{ asset('storage/' . $post->og_image) }}" alt="{{ $post->title }}">
+        <img class="photo" src="{{ asset('storage/' . $post->og_image) }}" alt="{{ $post->title }}" style="width: 700px; height: auto;">
     @endif
 
     <div class="content">

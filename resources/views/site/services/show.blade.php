@@ -13,7 +13,10 @@
     <h1>{{ $service->name }}</h1>
 
     @if ($service->og_image)
+        {{--
         <img class="photo" src="{{ asset('storage/' . $service->og_image) }}" alt="{{ $service->name }}">
+        --}}
+        <img class="photo" src="{{ asset('storage/' . $service->og_image) }}" alt="{{ $service->name }}" style="width: 600px; height: auto;">
     @endif
 
     <div class="content">
