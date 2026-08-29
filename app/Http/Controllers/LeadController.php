@@ -15,6 +15,7 @@ class LeadController extends Controller
         $data = $request->safe()->except(['agree', 'company']);
 
         try {
+            dd($data);
             Mail::to(config('mail.admin_address'))->send(new LeadMail($data));
         } catch (\Throwable $e) {
             Log::error('Не удалось отправить письмо о заявке: ' . $e->getMessage());
