@@ -28,6 +28,7 @@
         </a>
 
         <nav class="nav">
+            <a href="/page/projects">Проекты</a>
             <a href="/page/meetmasters">Наши мастера</a>
             <a href="{{ route('services.index') }}">Услуги</a>
             <a href="{{ route('products.index') }}">Изделия</a>
