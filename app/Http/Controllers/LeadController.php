@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Mail\LeadMail;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
@@ -12,7 +11,10 @@ class LeadController extends Controller
 {
     public function store(LeadRequest $request): RedirectResponse
     {
+        $URL = url()->previous();
+
         $data = $request->safe()->except(['agree', 'company']);
+        $data['url'] = $URL;
 
         try {
             Mail::to(env('MAIL_FROM_ADDRESS', 'hello@example.com'))->send(new LeadMail($data));

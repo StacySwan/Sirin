@@ -22,5 +22,20 @@
 
 <p style="color: #777;">Заявка получена {{ now()->format('d.m.Y в H:i') }}</p>
 
+@if (!empty($lead['url']))
+    <p>
+        <strong>Страница заявки url:</strong>
+        <a
+            href="{{ $lead['url'] }}"
+            target="_blank"
+            rel="noopener noreferrer"
+
+        >
+            {{ $lead['url'] }}
+    </p>
+@endif
+
+
+
 </body>
 </html>
