@@ -21,7 +21,7 @@ class LeadRequest extends FormRequest
             'subject_type' => ['nullable', 'string', 'max:50'],
             'subject_title' => ['nullable', 'string', 'max:255'],
             'agree' => ['accepted'],
-            'company' => ['nullable', 'size:0'],
+           // 'company' => ['nullable', 'size:0'],
         ];
     }
 
