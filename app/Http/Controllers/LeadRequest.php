@@ -33,7 +33,7 @@ class LeadRequest extends FormRequest
             'phone.required' => 'Укажите телефон для связи',
             'email.email' => 'Проверьте правильность email',
             'agree.accepted' => 'Нужно согласие на обработку персональных данных',
-            'company.size' => 'Заявка не отправлена',
+            //'company.size' => 'Заявка не отправлена',
         ];
     }
 }
